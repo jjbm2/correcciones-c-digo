@@ -1,10 +1,10 @@
-import modelopalabra from "../Models/palabras.model.";
+import modelopalabras from '../models/palabras.model.js';// corchetes y ruta
 
-modelopalabras.crete({
-    name:jessy,
-    edad:24
+modelopalabras.create({ //create 
+    name: "jessy",//comillas
+    edad: 24
 })
 
-const test = () =>{
+export const test = () =>{ //export 
     console.log("llamando al controlador")
 }

@@ -1,22 +1,27 @@
 import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
-import corse from "cors";
-import { test } from "./backend/contollers/controller.js";
+import cors from "cors"; // 'corse' estaba mal escrito
+import { test } from "./backend/contollers/controller.js"; //  'controllers' 
 
-dotenv.config
-mongoose.conect(process.env.urlbd)
-.then(()=>{
-    console.log("funciona la conexión de la base")
-})
-.catch(()=>{
-    console.log("no funciona la conexión a la base de datos")
-})
+dotenv.config(); // Faltaban los paréntesis para ejecutar dotenv.config()
+
+
+mongoose.connect(process.env.urlbd) // 'conect' → 'connect'
+  .then(() => {
+    console.log("Funciona la conexión de la base de datos");
+  })
+  .catch(() => {
+    console.log("No funciona la conexión a la base de datos");
+  });
 
 const app = express();
-app.usa(corse);
-app.liste(4000, ()=>{
-    console.long("Escuchando al servidor")
-})
 
-test
+
+app.use(cors()); //  'usa' → 'use' 
+
+app.listen(4000, () => { // 'liste' → 'listen'
+  console.log("Escuchando al servidor"); // 'console.long' → 'console.log'
+});
+
+test(); // 'test' estaba sin ejecutar
